@@ -2,6 +2,7 @@ package com.turtywurty.tutorialmod.init;
 
 import com.turtywurty.tutorialmod.TutorialMod;
 import com.turtywurty.tutorialmod.TutorialMod.TutorialItemGroup;
+import com.turtywurty.tutorialmod.items.TnTBow;
 import com.turtywurty.tutorialmod.items.TorchBow;
 import com.turtywurty.tutorialmod.objects.blocks.BlockItemBase;
 import com.turtywurty.tutorialmod.objects.items.ModMusicDiscItem;
@@ -68,6 +69,9 @@ public class ItemInit {
 
 	public static final RegistryObject<Item> RUBY_BOW = ITEMS.register( "ruby_bow", () ->
 			new TorchBow(new Item.Properties().group(TutorialItemGroup.instance).maxDamage(1000)));
+
+	public static final RegistryObject<Item> RUBY_BOW_BOMB = ITEMS.register( "ruby_bow_bomb", () ->
+			new TnTBow(new Item.Properties().group(TutorialItemGroup.instance).maxDamage(1000)));
 
 	public static final RegistryObject<PickaxeItem> RUBY_PICKAXE = ITEMS.register("ruby_pickaxe",
 			() -> new PickaxeItem(ModItemTiers.RUBY, 4, 5.0f,
