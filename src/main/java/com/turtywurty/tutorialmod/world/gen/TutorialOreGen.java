@@ -15,14 +15,12 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class TutorialOreGen {
 	public static void generateOre() {
 		for (Biome biome : ForgeRegistries.BIOMES) {
-			if (biome == Biomes.PLAINS) {
-				ConfiguredPlacement customConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(3, 0, 5, 25));
-				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
-						Feature.ORE
-								.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-										BlockInit.AMETHYST_ORE.get().getDefaultState(), 7))
-								.withPlacement(customConfig));
-			}
+			ConfiguredPlacement customConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 5, 55));
+			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
+					Feature.ORE
+							.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+									BlockInit.AMETHYST_ORE.get().getDefaultState(), 10))
+							.withPlacement(customConfig));
 		}
 	}
 }

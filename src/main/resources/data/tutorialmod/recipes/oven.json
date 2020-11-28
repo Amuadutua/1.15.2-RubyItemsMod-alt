@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XAX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "tutorialmod:steel_ingot"
+    },
+    "A": {
+      "item": "minecraft:coal"
+    }
+  },
+  "result": {
+    "item": "tutorialmod:oven"
+  }
+}

@@ -141,11 +141,5 @@ public class ItemInit {
 	public static final RegistryObject<Item> CUSTOM_ITEM = ITEMS.register("custom_item",
 			() -> new Item(new Item.Properties().group(TutorialItemGroup.instance)));
 
-	// Block Items
-	public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block_item", () -> new BlockItemBase(BlockInit.RUBY_BLOCK.get()));
-	public static final RegistryObject<Item> AMETHYST_BLOCK_ITEM = ITEMS.register("amethyst_block_item", () -> new BlockItemBase(BlockInit.AMETHYST_BLOCK.get()));
-	public static final RegistryObject<Item> AMETHYST_ORE_ITEM = ITEMS.register("amethyst_ore_item", () -> new BlockItemBase(BlockInit.AMETHYST_ORE.get()));
-	public static final RegistryObject<Item> RUBY_ORE_ITEM = ITEMS.register("ruby_ore_item", () -> new BlockItemBase(BlockInit.RUBY_ORE.get()));
-	public static final RegistryObject<Item> STEEL_ORE_ITEM = ITEMS.register("steel_ore_item", () -> new BlockItemBase(BlockInit.STEEL_ORE.get()));
-	public static final RegistryObject<Item> OVEN_ITEM = ITEMS.register("oven_item", () -> new BlockItemBase(BlockInit.OVEN.get()));
+
 }

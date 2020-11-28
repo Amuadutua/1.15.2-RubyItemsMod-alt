@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "tutorialmod:steel_ore"
+  },
+  "result": "tutorialmod:steel_ingot",
+  "experience": 10.0,
+  "cookingtime": 100
+}

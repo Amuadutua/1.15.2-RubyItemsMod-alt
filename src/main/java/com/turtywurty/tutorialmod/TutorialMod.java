@@ -1,5 +1,7 @@
 package com.turtywurty.tutorialmod;
 
+import com.turtywurty.tutorialmod.world.gen.TutorialOreGen2;
+import com.turtywurty.tutorialmod.world.gen.TutorialOreGen3;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -118,6 +120,8 @@ public class TutorialMod {
 			ComposterBlock.registerCompostable(0.4f, ItemInit.SEED_ITEM.get());
 		});
 		DeferredWorkQueue.runLater(TutorialOreGen::generateOre);
+		DeferredWorkQueue.runLater(TutorialOreGen2::generateOre);
+		DeferredWorkQueue.runLater(TutorialOreGen3::generateOre);
 		DeferredWorkQueue.runLater(StructureGen::generateStructures);
 		/*
 		 * DeferredWorkQueue.runLater(() -> { for (Biome biome : ForgeRegistries.BIOMES)
