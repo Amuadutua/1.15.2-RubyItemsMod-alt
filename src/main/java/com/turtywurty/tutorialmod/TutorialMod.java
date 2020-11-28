@@ -160,7 +160,7 @@ public class TutorialMod {
 
 		@Override
 		public ItemStack createIcon() {
-			return new ItemStack(BlockInit.EXAMPLE_BLOCK.get());
+			return new ItemStack(BlockInit.RUBY_BLOCK.get());
 		}
 	}
 }

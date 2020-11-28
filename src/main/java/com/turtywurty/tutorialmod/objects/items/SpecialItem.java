@@ -74,7 +74,7 @@ public class SpecialItem extends Item {
 
 	@Override
 	public boolean onEntityItemUpdate(ItemStack stack, ItemEntity entity) {
-		entity.getEntityWorld().setBlockState(entity.getPosition().down(), BlockInit.EXAMPLE_BLOCK.get().getDefaultState());
+		entity.getEntityWorld().setBlockState(entity.getPosition().down(), BlockInit.RUBY_BLOCK.get().getDefaultState());
 		return super.onEntityItemUpdate(stack, entity);
 	}
 

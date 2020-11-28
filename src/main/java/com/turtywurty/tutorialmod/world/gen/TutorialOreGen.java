@@ -16,11 +16,11 @@ public class TutorialOreGen {
 	public static void generateOre() {
 		for (Biome biome : ForgeRegistries.BIOMES) {
 			if (biome == Biomes.PLAINS) {
-				ConfiguredPlacement customConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 5, 5, 25));
+				ConfiguredPlacement customConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(3, 0, 5, 25));
 				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
 						Feature.ORE
 								.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-										BlockInit.DEF_BLOCK.get().getDefaultState(), 10))
+										BlockInit.AMETHYST_ORE.get().getDefaultState(), 7))
 								.withPlacement(customConfig));
 			}
 		}

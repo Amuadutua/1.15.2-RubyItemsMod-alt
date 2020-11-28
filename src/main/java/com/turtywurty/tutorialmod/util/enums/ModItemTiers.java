@@ -12,8 +12,8 @@ public enum ModItemTiers implements IItemTier {
 	
 	// int harvestLevel, int maxUses, float efficiency, float attackDamage, int
 	// enchantability, Supplier<Ingredient> repairMaterial
-	EXAMPLE(4, 1500, 15.0F, 7.0F, 250, () -> {
-		return Ingredient.fromItems(ItemInit.EXAMPLE_ITEM.get());
+	RUBY(5,2000,12.0F,3.0F,15, () -> {
+		return Ingredient.fromItems(ItemInit.RUBY.get());
 	});
 
 	private final int harvestLevel;

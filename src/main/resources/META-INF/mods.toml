@@ -8,7 +8,7 @@ issueTrackerURL="http://my.issue.tracker/"
 
 modId="tutorialmod"
 
-version="1.0"
+version="1.15.2-1.0.5"
 
 displayName="Tutorial Mod"
 
@@ -18,9 +18,9 @@ displayURL="http://example.com/"
 
 logoFile="examplemod.png"
 
-credits="TurtyWurty(Me!!) and all of my Subscribers!!"
+credits="Thanks to TurtyWurty for the original code check his channel at https://www.youtube.com/channel/UCicAXLV4w2X6bn2EuM4To4w"
 
-authors="TurtyWurty"
+authors="Amuadutua"
 
 description='''
 	Hello, This is a description, and I do not know what to write here!

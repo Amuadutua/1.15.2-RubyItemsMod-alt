@@ -15,8 +15,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public enum ModArmorMaterials implements IArmorMaterial {
-	TEST(TutorialMod.MOD_ID + ":test", 5, new int[] { 7, 9, 11, 7 }, 420, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {
-		return Ingredient.fromItems(ItemInit.TEST_ITEM.get());
+	RUBY(TutorialMod.MOD_ID + ":ruby", 25, new int[]{2, 5, 6, 2}, 25,
+			SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 9.0F, () -> {
+		return Ingredient.fromItems(ItemInit.RUBY.get());
 	});
 
 	private static final int[] MAX_DAMAGE_ARRAY = new int[] { 16, 16, 16, 16 };

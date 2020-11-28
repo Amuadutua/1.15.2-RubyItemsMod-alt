@@ -1,19 +1,7 @@
 package com.turtywurty.tutorialmod.init;
 
 import com.turtywurty.tutorialmod.TutorialMod;
-import com.turtywurty.tutorialmod.objects.blocks.BlockQuarry;
-import com.turtywurty.tutorialmod.objects.blocks.ExampleChestBlock;
-import com.turtywurty.tutorialmod.objects.blocks.ExampleCrop;
-import com.turtywurty.tutorialmod.objects.blocks.ExampleFurnaceBlock;
-import com.turtywurty.tutorialmod.objects.blocks.ItemPedestalBlock;
-import com.turtywurty.tutorialmod.objects.blocks.JazzDoor;
-import com.turtywurty.tutorialmod.objects.blocks.ModLadderBlock;
-import com.turtywurty.tutorialmod.objects.blocks.ModPressurePlateBlock;
-import com.turtywurty.tutorialmod.objects.blocks.ModSaplingBlock;
-import com.turtywurty.tutorialmod.objects.blocks.ModTorchBlock;
-import com.turtywurty.tutorialmod.objects.blocks.ModWallTorchBlock;
-import com.turtywurty.tutorialmod.objects.blocks.ModWoodButtonBlock;
-import com.turtywurty.tutorialmod.objects.blocks.SpecalBlock;
+import com.turtywurty.tutorialmod.objects.blocks.*;
 import com.turtywurty.tutorialmod.world.feature.JazzTree;
 
 import net.minecraft.block.Block;
@@ -39,8 +27,11 @@ public class BlockInit {
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS,
 			TutorialMod.MOD_ID);
 
-	public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(
-			Block.Properties.create(Material.IRON).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.SAND)));
+	public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register( "ruby_block", RubyBlock::new);
+	public static final RegistryObject<Block> AMETHYST_BLOCK = BLOCKS.register( "amethyst_block", AmethystBlock::new);
+	public static final RegistryObject<Block> AMETHYST_ORE = BLOCKS.register( "amethyst_ore", AmethystOre::new);
+	public static final RegistryObject<Block> RUBY_ORE = BLOCKS.register( "ruby_ore", RubyOre::new);
+	public static final RegistryObject<Block> STEEL_ORE = BLOCKS.register( "steel_ore", SteelOre::new);
 
 	public static final RegistryObject<Block> SPECAL_BLOCK = BLOCKS.register("specal_block",
 			() -> new SpecalBlock(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 10.0f)
@@ -50,11 +41,14 @@ public class BlockInit {
 	public static final RegistryObject<Block> QUARRY = BLOCKS.register("quarry",
 			() -> new BlockQuarry(Block.Properties.create(Material.IRON)));
 
+	public static final RegistryObject<Block> OVEN = BLOCKS.register("oven",
+			() -> new Oven());
+
 	public static final RegistryObject<Block> DEF_BLOCK = BLOCKS.register("def_block",
 			() -> new Block(Block.Properties.create(Material.IRON)));
 
 	public static final RegistryObject<Block> EXAMPLE_STAIRS = BLOCKS.register("example_stairs",
-			() -> new StairsBlock(() -> BlockInit.EXAMPLE_BLOCK.get().getDefaultState(),
+			() -> new StairsBlock(() -> BlockInit.RUBY_BLOCK.get().getDefaultState(),
 					Block.Properties.create(Material.SAND, MaterialColor.GOLD)));
 	public static final RegistryObject<Block> EXAMPLE_FENCE = BLOCKS.register("example_fence",
 			() -> new FenceBlock(Block.Properties.create(Material.SAND, MaterialColor.GOLD)));
