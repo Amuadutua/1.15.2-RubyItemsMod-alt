@@ -8,10 +8,8 @@ import com.turtywurty.tutorialmod.objects.blocks.BlockItemBase;
 import com.turtywurty.tutorialmod.objects.items.ModMusicDiscItem;
 import com.turtywurty.tutorialmod.objects.items.ModSpawnEggItem;
 import com.turtywurty.tutorialmod.objects.items.SpecialItem;
-import com.turtywurty.tutorialmod.util.enums.ModArmorMaterials;
-import com.turtywurty.tutorialmod.util.enums.ModItemTiers;
+import com.turtywurty.tutorialmod.util.enums.*;
 
-import com.turtywurty.tutorialmod.util.enums.ModItemTiers2;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
@@ -82,10 +80,28 @@ public class ItemInit {
 					new Item.Properties().group(TutorialItemGroup.instance)));
 
 	public static final RegistryObject<AxeItem> RUBY_AXE = ITEMS.register("ruby_axe",
-			() -> new AxeItem(ModItemTiers.RUBY, 11, 3.0f, new Item.Properties().group(TutorialItemGroup.instance)));
+			() -> new AxeItem(ModItemTiers.RUBY, 8, 3.0f, new Item.Properties().group(TutorialItemGroup.instance)));
 
 	public static final RegistryObject<HoeItem> RUBY_HOE = ITEMS.register("ruby_hoe",
 			() -> new HoeItem(ModItemTiers.RUBY, 5.0f, new Item.Properties().group(TutorialItemGroup.instance)));
+
+	public static final RegistryObject<SwordItem> STEEL_SWORD = ITEMS.register("steel_sword",
+			() -> new SwordItem(ModItemTiers3.STEEL, 9, 5.0f,
+					new Item.Properties().group(TutorialItemGroup.instance)));
+
+	public static final RegistryObject<PickaxeItem> STEEL_PICKAXE = ITEMS.register("steel_pickaxe",
+			() -> new PickaxeItem(ModItemTiers3.STEEL, 4, 5.0f,
+					new Item.Properties().group(TutorialItemGroup.instance)));
+
+	public static final RegistryObject<ShovelItem> STEEL_SHOVEL = ITEMS.register("steel_shovel",
+			() -> new ShovelItem(ModItemTiers3.STEEL, 2, 5.0f,
+					new Item.Properties().group(TutorialItemGroup.instance)));
+
+	public static final RegistryObject<HoeItem> STEEL_HOE = ITEMS.register("steel_hoe",
+			() -> new HoeItem(ModItemTiers3.STEEL, 5.0f, new Item.Properties().group(TutorialItemGroup.instance)));
+
+	public static final RegistryObject<AxeItem> STEEL_AXE = ITEMS.register("steel_axe",
+			() -> new AxeItem(ModItemTiers3.STEEL, 11, 3.0f, new Item.Properties().group(TutorialItemGroup.instance)));
 
 
 	public static final RegistryObject<SwordItem> AMETHYST_SWORD = ITEMS.register( "amethyst_sword", () ->
@@ -96,10 +112,18 @@ public class ItemInit {
 			new AxeItem(ModItemTiers2.AMETHYST, 1, -2.6F, new Item.Properties().group(TutorialItemGroup.instance)));
 	public static final RegistryObject<ShovelItem> AMETHYST_SHOVEL = ITEMS.register( "amethyst_shovel", () ->
 			new ShovelItem(ModItemTiers2.AMETHYST, 0, -2.8F, new Item.Properties().group(TutorialItemGroup.instance)));
+	public static final RegistryObject<HoeItem> AMETHYST_HOE = ITEMS.register("amethyst_hoe",
+			() -> new HoeItem(ModItemTiers2.AMETHYST, 5.0f, new Item.Properties().group(TutorialItemGroup.instance)));
+
+
 
 
 	public static final RegistryObject<SwordItem> HAMMER = ITEMS.register( "hammer", () ->
-			new SwordItem(ModItemTiers.RUBY, 4, -2.8F, new Item.Properties().group(TutorialItemGroup.instance)));
+			new SwordItem(ModItemTiers3.STEEL, 4, -2.8F, new Item.Properties().group(TutorialItemGroup.instance)));
+
+	public static final RegistryObject<PickaxeItem> MAGMA_PICKAXE = ITEMS.register("magma_pickaxe",
+			() -> new PickaxeItem(ModItemTiers3.STEEL, 4, 5.0f,
+					new Item.Properties().group(TutorialItemGroup.instance)));
 
 	// Armor
 	public static final RegistryObject<ArmorItem> RUBY_HELMET = ITEMS.register("ruby_helmet",
@@ -116,6 +140,22 @@ public class ItemInit {
 
 	public static final RegistryObject<ArmorItem> RUBY_BOOTS = ITEMS.register("ruby_boots",
 			() -> new ArmorItem(ModArmorMaterials.RUBY, EquipmentSlotType.FEET,
+					new Item.Properties().group(TutorialItemGroup.instance)));
+
+	public static final RegistryObject<ArmorItem> AMETHYST_HELMET = ITEMS.register("amethyst_helmet",
+			() -> new ArmorItem(ModArmorMaterials2.AMETHYST, EquipmentSlotType.HEAD,
+					new Item.Properties().group(TutorialItemGroup.instance)));
+
+	public static final RegistryObject<ArmorItem> AMETHYST_CHESTPLATE = ITEMS.register("amethyst_chestplate",
+			() -> new ArmorItem(ModArmorMaterials2.AMETHYST, EquipmentSlotType.CHEST,
+					new Item.Properties().group(TutorialItemGroup.instance)));
+
+	public static final RegistryObject<ArmorItem> AMETHYST_LEGGINGS = ITEMS.register("amethyst_leggings",
+			() -> new ArmorItem(ModArmorMaterials2.AMETHYST, EquipmentSlotType.LEGS,
+					new Item.Properties().group(TutorialItemGroup.instance)));
+
+	public static final RegistryObject<ArmorItem> AMETHYST_BOOTS = ITEMS.register("amethyst_boots",
+			() -> new ArmorItem(ModArmorMaterials2.AMETHYST, EquipmentSlotType.FEET,
 					new Item.Properties().group(TutorialItemGroup.instance)));
 
 	// Miscellaneous

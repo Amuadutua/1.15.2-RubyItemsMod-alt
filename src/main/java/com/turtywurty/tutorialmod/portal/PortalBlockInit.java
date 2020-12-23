@@ -16,6 +16,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.pattern.BlockPattern;
+import net.minecraft.client.audio.Sound;
+import net.minecraft.client.audio.SoundHandler;
+import net.minecraft.client.audio.SoundList;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -25,12 +28,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.CachedBlockInfo;
-import net.minecraft.util.Direction;
+import net.minecraft.util.*;
 import net.minecraft.util.Direction.Axis;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.Rotation;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -45,6 +44,7 @@ import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.sound.SoundEvent;
 import net.minecraftforge.common.util.ITeleporter;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -61,8 +61,9 @@ public class PortalBlockInit {
 	public static class PortalBlock extends Block {
 
 		public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.HORIZONTAL_AXIS;
-		protected static final VoxelShape X_AABB = Block.makeCuboidShape(0.0D, 0.0D, 6.0D, 16.0D, 16.0D, 10.0D);
-		protected static final VoxelShape Z_AABB = Block.makeCuboidShape(6.0D, 0.0D, 0.0D, 10.0D, 16.0D, 16.0D);
+		protected static final VoxelShape Z_AABB = Block.makeCuboidShape(6, 0, 0, 10, 16, 16);
+		protected static final VoxelShape X_AABB = Block.makeCuboidShape(0, 0, 6, 16, 16, 10);
+
 
 		public PortalBlock(Properties properties) {
 			super(properties);
@@ -128,7 +129,7 @@ public class PortalBlockInit {
 
 				new PortalBlock.Size(worldIn, pos, Axis.X).placePortalBlocks();
 
-				if (entityIn.timeUntilPortal > 0) {
+				if (entityIn.timeUntilPortal > 5) {
 					entityIn.timeUntilPortal = entityIn.getPortalCooldown();
 				} else {
 					if (!entityIn.world.isRemote && !pos.equals(entityIn.lastPortalPos)) {
@@ -193,7 +194,7 @@ public class PortalBlockInit {
 		public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
 			if (rand.nextInt(100) == 0) {
 				worldIn.playSound((double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D,
-						SoundInit.AMBIENT.get(), SoundCategory.BLOCKS, 0.5F, rand.nextFloat() * 0.4F + 0.8F, false);
+						SoundInit.PORTAL_AMBIENT.get(), SoundCategory.BLOCKS, 0.5F, rand.nextFloat() * 0.4F + 0.8F, false);
 			}
 
 			for (int i = 0; i < 4; ++i) {

@@ -94,6 +94,9 @@ public class BlockInit {
 	public static final RegistryObject<WallBlock> EXAMPLE_WALL = BLOCKS.register("example_wall",
 			() -> new WallBlock(Block.Properties.from(Blocks.BRICK_WALL)));
 
+	public static final RegistryObject<WallBlock> PIPE = BLOCKS.register("pipe_base",
+			() -> new WallBlock(Block.Properties.from(Blocks.BRICK_WALL)));
+
 	public static final RegistryObject<ModTorchBlock> EXAMPLE_TORCH = BLOCKS.register("example_torch",
 			() -> new ModTorchBlock(Block.Properties.from(Blocks.TORCH)));
 

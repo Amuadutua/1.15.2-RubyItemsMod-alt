@@ -17,6 +17,9 @@ public class SoundInit {
 	public static final RegistryObject<SoundEvent> AMBIENT = SOUNDS.register("entity.example_entity.ambient",
 			() -> new SoundEvent(new ResourceLocation(TutorialMod.MOD_ID, "entity.example_entity.ambient")));
 
+	public static final RegistryObject<SoundEvent> PORTAL_AMBIENT = SOUNDS.register("blocks.portal.ambient",
+			() -> new SoundEvent(new ResourceLocation(TutorialMod.MOD_ID, "blocks.portal.ambient")));
+
 	public static final Lazy<SoundEvent> LAZY_PROMISES_MUSIC = Lazy
 			.of(() -> new SoundEvent(new ResourceLocation(TutorialMod.MOD_ID, "disc.promises")));
 

@@ -18,5 +18,15 @@
 				"stream": true
 			}
 		]
+	},
+	"blocks.portal.ambient": {
+		"category": "block",
+		"subtitle": "block.portal.ambient",
+		"sounds": [
+			{
+				"name": "tutorialmod:blocks/blocks.portal.ambient",
+				"stream": true
+			}
+		]
 	}
 }
